@@ -1,5 +1,5 @@
-//"use strict";
-{/*//polyfill of call ,apply and bind
+
+//polyfill of call ,apply and bind
 const obj={
     name:'nishi',
     age:24,
@@ -147,7 +147,7 @@ Array.prototype.myreduce=function(cb,acc){
 var abcdef= arr.myreduce(cbreduce,0) 
 console.log(abcdef)
 
-//throttling
+//Debouncing
 
 let i=1
 function printi(){
@@ -168,7 +168,7 @@ cb.apply(context,args)
 //let betterfunction = Debounce(printi, 1000);
 
 
-
+//throttling
 
 function throttle(fun,delay){
     let flag=true;
@@ -196,8 +196,8 @@ let abcc=1234566556
 
 console.log(abcc.toString().split('').reverse().join(''))
 //remove duplicate from array
-let arr=['khjhj','t','t','u',888,888,'khjhj',7,4]
-let cc=new Set(arr)
+let arrw=['khjhj','t','t','u',888,888,'khjhj',7,4]
+let cc=new Set(arrw)
 let ccg=Array.from(cc)
 
 console.log(ccg)
@@ -255,14 +255,7 @@ function findMissingNumber(arr) {
     
     const missingNumber = findMissingNumber(numbers);
     console.log("Missing number:", missingNumber);
-    //code for finding missing number from array(if there is multiple missing number)
-    const arr11=[7,8,5]
-    let n=arr11.max()
-    console.log(n)
-
-//call apply bind
-
-//let abc=10;
+   
 
 
 
@@ -279,9 +272,9 @@ for (let i=0;i<str.length; i++) {
     console.log(str[i]); // Output each character of the string
 }
 
-let arr=[2,4,6]
+let aa22=[2,4,6]
 console.log(typeof(obj1))//object
-console.log(typeof(arr))//object
+console.log(typeof(aa22))//object
 console.log(typeof(null))//object
 console.log(typeof(undefined))//undefined
 //closure
@@ -301,20 +294,23 @@ cccc()
 cccc()
 cccc()
 //benefits of closure
+{/*1.  
 Closures enable the creation of private variables and functions within the scope
 of an outer function. This means that variables declared within the outer function
 are not accessible from outside the function scope, but inner functions (nested within the outer function)
 have access to these variables. This allows for data hiding and prevents external manipulation of data,
-promoting better encapsulation and data privacy.*/}
-{/*Closures enable functions to maintain and manage their own internal state.
+promoting better encapsulation and data privacy.
+2.
+Closures enable functions to maintain and manage their own internal state.
  Since inner functions have access to the variables of their outer functions, 
 they can retain references to these variables even after the outer function has finished executing. 
-This allows functions to remember and update their state across multiple invocations.*/}
-//disvantage of closure
+This allows functions to remember and update their state across multiple invocations.
+///////////////////////////////////////////////////////disvantage of closure
+
 {/*the variable declared inside a closure are not garbage collected and too many closures can slow down your application*/}
 //uses of closure
-//in callback function
- {/*here's an example of closures in a callback function in JavaScript:
+//1. in callback function
+ //here's an example of closures in a callback function in JavaScript:
 
 
 function greet(name) {
@@ -334,7 +330,7 @@ const goodbye = greet('Alice');
 
 // Invoking the returned callback function
 goodbye(); // Output: Goodbye, Alice!
-//in memoization
+
 
 //reverse string without using any inbuilt function
 let str1 = "Hello nishi";
@@ -424,7 +420,7 @@ for(let i=arrrr[0];i<=n;i++){
         }
   
     console.log(sum1-sum)
-    //fetch('https://jsonplaceholder.typicode.cm/posts').then((response)=>console.log(response.json())).catch((error)=>console.log(error))
+
    
 
 
@@ -435,16 +431,16 @@ for(let i=arrrr[0];i<=n;i++){
     let aaaaaa=[[9,6],[7,4],[8,2]]
     aaaaaa.sort((a,b)=>{return a[1]-b[1]})
     console.log(aaaaaa)
-    let arr = [[9,6],[7,4],[8,2]];
+    let arr55 = [[9,6],[7,4],[8,2]];
 
-arr.sort((a, b) => a[1] - b[1]);
+arr55.sort((a, b) => a[1] - b[1]);
 
-console.log(arr);
-let arr1 = [[9,6],[7,4],[8,2]];
+console.log(arr55);
+let arr177 = [[9,6],[7,4],[8,2]];
 
-arr1.sort((a, b) => a[0] - b[0]);
+arr177.sort((a, b) => a[0] - b[0]);
 
-console.log(arr1);
+console.log(arr177);
 let arr2 = [[9,6],[7,4],[8,2]];
 
 arr2.sort((a, b) => a[2] - b[2]);
@@ -452,10 +448,178 @@ arr2.sort((a, b) => a[2] - b[2]);
 console.log(arr2);
 
 //promise.all->wait for all promise to get resolved and get data of each resolved promise in the form of array like [val1,val2,val3,etc] 
-but if as soon as any first promise get rejected it will give arror without taking care of any other promise whether they are resolved or rejected.
+//but if as soon as any first promise get rejected it will give arror without taking care of any other promise whether they are resolved or rejected.
 //promise.allSettled->wait for all promise to get settled  and get data of each settled promise in the form of array let's have one example[val1,error,val3,etc] 
-/promise.race->return result of first settled promise whether it is resolved or rejected let's have one example val1 or error
+//promise.race->return result of first settled promise whether it is resolved or rejected let's have one example val1 or error
 //promise.any-> wait for first resolved but if all fails then will get aggregated error
+
+var temp='hello'
+function abc(){
+    console.log(temp)
+    var temp='hi'
+   
+}
+abc()
+
+const timer1=setTimeout(()=>{
+    console.log('timer1')
+    const timer2=setTimeout(()=>{
+        console.log('timer2')
+    },0)
+    const promise1=Promise.resolve().then(()=>{
+        console.log('promise1')
+    })
+    const timer3=setTimeout(()=>{
+        console.log('timer3')
+    },1)
+},0)
+
+
+const timer4=setTimeout(()=>{
+    console.log('timer4')
+    const promise2=Promise.resolve().then(()=>{
+        console.log('promise2')
+    })
+},0)
+const timer5=setTimeout(()=>{
+    console.log('timer5')
+},1)
+const promise3=Promise.resolve().then(()=>{
+    console.log('promise3')
+})
+
+//promise3
+//timer1
+//timer4
+//promise1
+//pr
+//timer2
+//timer3
+
+// a ref is an attribute that allows you to interact with DOM nodes or React elements directly.
+//There are two main types of refs in React:
+//1.string ref
+import React, { useEffect } from 'react'
+
+const Ref = () => {
+    const inputRef=React.createRef()
+    useEffect(()=>{
+    inputRef.current.focus()
+    },[])
+  return (
+    <div>
+      <input type='text' ref={inputRef}/>
+    </div>
+  )
+}
+
+export default Ref
+//2.function ref
+import React, { useRef ,useEffect} from 'react'
+
+const RefNew = () => {
+    const inputRef=useRef(null)
+    useEffect(()=>{
+    inputRef.current.focus()
+    },[])
+  return (
+    <div>
+      <input type='text' ref={inputRef}/>
+    </div>
+  )
+}
+
+export default RefNew
+
+Forward ref
+
+
+import React, { useRef} from 'react'
+import RefNewChild from './RefNewChild'
+
+const RefNew = () => {
+    const inputRef=useRef(null)
+    const handleClick=()=>{
+    inputRef.current.focus()
+    }
+  return (
+    <div>
+      <input type='text' ref={inputRef}/>
+      
+      <RefNewChild handler={handleClick}/>
+    </div>
+  )
+}
+
+export default RefNew
+
+
+import React, { useRef} from 'react'
+
+const RefNewChild =React.forwardRef((props,ref) => {
+   
+   
+  return (
+    <div>
+      <h1>ForwardRef</h1>
+      <button onClick={props.handler}>clickme</button>
+    </div>
+  )
+}
+)
+export default RefNewChild
+
+
+*
+
+
+//React Portals provide a way to render children into a DOM node that exists outside the hierarchy of the parent component. 
+
+
+
+
+
+     
+ 
+ 
+ 
+ 
+ 
+let dddd=[1,2,3,4,5,6,7]
+dddd.forEach((num)=>{
+    if(num%2===0){
+        break;
+    }
+    console.log(num)
+})
+function add(a, b) {
+    console.log('Calculating...');
+    return a + b;
+  }
+  function memoize(func) {
+    const cache = {};
+    
+    return function(...args) {
+      const key = JSON.stringify(args);
+      if (!(key in cache)) {
+        cache[key] = func.apply(this, args);
+      }
+      return cache[key];
+    };
+  }
+  const memoizedAdd = memoize(add);
+console.time()
+console.log(memoizedAdd(1, 2));
+console.timeEnd()
+console.time()
+console.log(memoizedAdd(1, 2));
+console.timeEnd()
+
+
+
+
+  
+
 
 
 
